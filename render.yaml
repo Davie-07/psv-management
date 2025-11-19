@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: trustdrive-backend
+    env: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm run start
+    rootDirectory: backend
+    envVars:
+      - key: PORT
+        value: 4000
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_EXPIRES_IN
+        value: 12h
+      - key: PARCEL_TOKEN_SECRET
+        sync: false
+      - key: PARCEL_TOKEN_EXPIRES_IN
+        value: 30m
+
